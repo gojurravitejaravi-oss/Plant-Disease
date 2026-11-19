@@ -1,5 +1,4 @@
-%%writefile requirements.txt
-streamlit
-tensorflow
-numpy
-pillow
+streamlit==1.37.1
+tensorflow==2.15.0
+numpy==1.26.4
+pillow==10.4.0
