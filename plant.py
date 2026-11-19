@@ -9,7 +9,7 @@ st.title("🌱 Plant Disease Detector")
 st.write("Upload a leaf photo and I will tell you the disease.")
 
 def load_my_model():
-    model = tf.keras.models.load_model("plant_model.h5", compile=False)
+    model = tf.keras.models.load_model("plant_model.h5", compile=False,safe_mode=False)
     with open("class_names.json") as f:
         class_names = json.load(f)
     return model, class_names
