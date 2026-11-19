@@ -9,13 +9,13 @@ st.title("🌱 Plant Disease Detector")
 st.write("Upload a leaf photo and I will tell you the disease.")
 
 @st.cache_resource
-def load_model():
-    model = tf.keras.models.load_model("plant_model.h5")
-    with open("class_names.json", "r") as f:
+def load_my_model():
+    model = tf.keras.models.load_model("plant_model.h5", compile=False)
+    with open("class_names.json") as f:
         class_names = json.load(f)
     return model, class_names
 
-model, class_names = load_model()
+model, class_names = load_my_model()
 
 uploaded_file = st.file_uploader("Choose a leaf image...", type=["jpg", "png", "jpeg", "webp"])
 
